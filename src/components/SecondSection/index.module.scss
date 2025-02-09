@@ -4,15 +4,33 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
+    margin-bottom: 0.5rem;
     li {
+      position: relative;
       color: #fff;
       list-style: none;
+
+      .active {
+        display: block;
+        height: 4px;
+        width: 100%;
+        position: absolute;
+        left: 50%;
+        bottom: -0.5rem;
+        transform: translateX(-50%);
+        background: yellow;
+        opacity: 0;
+        transition: opacity 0.3s;
+
+        &.visible {
+          opacity: 1;
+        }
+      }
     }
   }
 
   section {
     padding: 0.5rem;
-
     h2 {
       color: #fff;
     }
